@@ -12,14 +12,14 @@ class App extends Component {
         name: 'A vassoura mais TOP',
         price: 25.00,
         stock: 1,
-        image: 'https://www.paodeacucar.com/img/uploads/1/319/504319.jpg?type=product'
+        image: '//www.paodeacucar.com/img/uploads/1/319/504319.jpg?type=product'
       },
       {
         sku: 2,
         name: 'Talheres maravilhososssss',
         price: 35.00,
         stock: 1,
-        image: 'http://d2figssdufzycg.cloudfront.net/Custom/Content/Products/43/43/4343142_conjunto-de-talheres-para-churrasco-12-pcs-bbq6085-euro-home_M1.jpg'
+        image: '//d2figssdufzycg.cloudfront.net/Custom/Content/Products/43/43/4343142_conjunto-de-talheres-para-churrasco-12-pcs-bbq6085-euro-home_M1.jpg'
       }
     ],
     cart: {
