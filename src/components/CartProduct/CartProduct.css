@@ -1,0 +1,35 @@
+/* CartProduct */
+  .CartProduct {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .CartProduct p {
+    display: block;
+    font-weight: 300;
+    color: #78909c;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .CartProduct span {
+    display: block;
+    font-weight: 300;
+    color: #78909c;
+    text-align: left;
+  }
+  .CartProduct strong {
+    display: inline-block;
+    font-weight: 700;
+    color: #78909c;
+    text-align: left;
+  }
+
+  .CartProduct-remove {
+    float: right;
+    color: #e53935;
+  }
+  .CartProduct-remove:hover {
+    color: #c62828;
+  }
