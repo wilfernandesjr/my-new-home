@@ -33,3 +33,11 @@
   .CartProduct-remove:hover {
     color: #c62828;
   }
+
+@media only screen and (max-width: 599px) {
+  .CartProduct {
+    border-bottom: 1px solid #41535d;
+  }
+}
+
+  

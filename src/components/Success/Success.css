@@ -1,0 +1,29 @@
+/* Success */
+  .Success {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 25px 0;
+    text-align: center;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    line-height: 140%;
+  }
+  .Success h3 {
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 30px;
+  }
+  .Success p {
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .Success img {
+    display: block;
+    margin: 0 auto 30px;
+    max-width: 100%;
+  }

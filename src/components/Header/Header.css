@@ -7,7 +7,7 @@
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     padding: 25px 0;
-    margin-bottom: 32px;
+    margin-bottom: 60px;
   }
   .Header h1 {
     display: inline-block;
@@ -23,3 +23,14 @@
     font-weight: 300;
     color: #bfbfbf;
   }
+
+@media only screen and (max-width: 599px) {
+  .Header h1 {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+  .Header a:hover {
+    text-decoration: none;
+  }
+}

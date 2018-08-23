@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import CartProduct from '../CartProduct/CartProduct'
 import './Cart.css'
 
@@ -20,7 +21,7 @@ class Cart extends Component {
         <a href="javascript:void(0)" onClick={this.activeBag.bind(this)} className="Cart-button">
           {!<span><i className="fas fa-gift"></i></span>}
           <span>{prodLength}</span>
-          Your Gift Box
+          <div className="Cart-openText">Your Gift Box</div>
           <span><i className="fas fa-angle-down"></i></span>
         </a>
 
@@ -40,7 +41,7 @@ class Cart extends Component {
           {!!this.props.cart.products.length && (
             <div>
               <p className="Cart-total">Total: <span>R$ {this.props.cart.total}</span></p>
-              <a href="/checkout" className="Cart-cta">Concluir Pedido</a>
+              <Link to="/checkout" className="Cart-cta">Checkout</Link>
             </div>
           )}
         </div>

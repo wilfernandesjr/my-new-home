@@ -1,6 +1,7 @@
 .Cart {
   display: inline-block;
   float: right;
+  position: relative;
 }
 
 .Cart.is-active .fa-angle-down {
@@ -29,7 +30,6 @@
 }
 .Cart-button span:last-child {
   display: inline-block;
-  width: 40px;
   height: 40px;
   margin: 0 15px;
 }
@@ -77,11 +77,14 @@
   position: relative;
   line-height: 50px;
   text-align: center;
+  cursor: pointer;
+  font-size: 18px;
   color: #333;
   font-weight: 300;
   text-transform: uppercase;
   background: #64dd17;
   border-radius: 6px;
+  outline: none;
   border-bottom: 5px solid #43a047;
   margin-top: 20px;
 }
@@ -92,6 +95,49 @@
   border-bottom: 3px solid #43a047;
 }
 
+.Cart-openText {
+  display: inline;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .Cart {
+    display: block;
+    float: none;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    z-index: 4;
+    background: #102027;
+  }
+  .Cart-button {
+    display: block;
+    height: 40px;
+    box-sizing: content-box;
+    padding: 20px 0;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+  }
+  .Cart-button span:first-child {
+    background: #37474f;
+    color: #fff;
+  }
+  .Cart-bag {
+    width: 100%;
+    padding: 20px;
+    bottom: 80px;
+    top: inherit;
+    right: 0;
+    border-radius: 0;
+    border: none;
+    background: #37474f;
+    z-index: 3;
+  }
+
+}
 
 
 

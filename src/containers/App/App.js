@@ -1,31 +1,27 @@
 import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import Product from '../../components/Product/Product'
+import Checkout from '../../components/Checkout/Checkout'
+import Success from '../../components/Success/Success'
 import './App.css'
 
 class App extends Component {
   state = {
-    products: [
-      {
-        sku: 1,
-        name: 'A vassoura mais TOP',
-        price: 25.00,
-        stock: 1,
-        image: '//www.paodeacucar.com/img/uploads/1/319/504319.jpg?type=product'
-      },
-      {
-        sku: 2,
-        name: 'Talheres maravilhososssss',
-        price: 35.00,
-        stock: 1,
-        image: '//d2figssdufzycg.cloudfront.net/Custom/Content/Products/43/43/4343142_conjunto-de-talheres-para-churrasco-12-pcs-bbq6085-euro-home_M1.jpg'
-      }
-    ],
+    products: [],
     cart: {
       products: [],
       total: 0
     }
+  }
+
+  componentDidMount() {
+    fetch('https://api.chadecasanova.wilfernandes.com.br/products')
+      .then(products => products.json())
+      .then(products => (
+        this.setState({ products })
+      ))
   }
 
   addToCart(product) {
@@ -58,18 +54,43 @@ class App extends Component {
           cart={this.state.cart} 
           removeProduct={this.removeProduct}
         />
+        
+        <Switch>
+          <Route exact path="/" render={() => (
+            <div className="container">
+              {this.state.products.map((product, index) => (
+                <Product
+                  key={index}
+                  product={product}
+                  cart={this.state.cart}
+                  onAddToCart={this.addToCart.bind(this)}
+                  removeProduct={this.removeProduct.bind(this)}
+                />
+              ))}
+            </div>
+          )} />
 
-        <div className="row">
-          {this.state.products.map((product, index) => (
-            <Product
-              key={index}
-              product={product}
-              cart={this.state.cart}
-              onAddToCart={this.addToCart.bind(this)}
-              removeProduct={this.removeProduct.bind(this)}
-            />
-          ))}
-        </div>
+          <Route path="/checkout" render={({history}) => (
+            <div className="row">
+              <Checkout 
+                cart={this.state.cart} 
+                goToSuccess={(() => history.push('/success')).bind(this)} 
+                removeProduct={this.removeProduct.bind(this)} 
+              />
+            </div>
+          )} />
+
+          <Route path="/success" render={() => (
+            <div className="row">
+              <Success />
+            </div>
+          )} />
+
+          <Route render={() => (
+            <div className="page-error">
+            </div>
+          )} />
+        </Switch>
 
         <div className="row">
           <Footer />

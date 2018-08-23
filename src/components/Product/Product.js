@@ -12,7 +12,7 @@ function Product(props) {
 
   return (
     <div className="ProductWrapper">
-      <div className="Product">
+      <div className={'Product ' + (isAddedToCart ? 'is-disabled' : '')}>
         <div className="Product-image" style={{
           backgroundImage: `url(${product.image})`
         }}>
